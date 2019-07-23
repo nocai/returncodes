@@ -11,7 +11,6 @@ func TestS(t *testing.T) {
 	bytes, e := json.Marshal(coder)
 	t.Logf("%s, %v", bytes, e)
 
-
 	bytes, e = json.Marshal(Data("data"))
 	t.Logf("%s, %v", bytes, e)
 	bytes, e = json.Marshal(Mess("ok"))
@@ -19,7 +18,8 @@ func TestS(t *testing.T) {
 
 	bytes, e = json.Marshal(Succ("aaa", "aaaa"))
 	t.Logf("%s, %v", bytes, e)
-
+	bytes, e = json.Marshal(Succ("", "aaaa"))
+	t.Logf("%s, %v", bytes, e)
 	bytes, e = json.Marshal(Fail("a"))
 	t.Logf("%s, %v", bytes, e)
 
