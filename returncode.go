@@ -8,10 +8,10 @@ import (
 
 // 状态码对应着httpStatus，业务异常请定义 >= 1000(4位数)
 var (
-	Success     = New(http.StatusOK, "操作成功")
-	ErrSystem   = NewErrorCoder(http.StatusInternalServerError, "系统异常")
-	ErrArgument = NewErrorCoder(http.StatusBadRequest, "参数有误")
-	ErrTimeout  = NewErrorCoder(http.StatusRequestTimeout, "处理超时")
+	Success     = New(http.StatusOK, http.StatusText(http.StatusOK))
+	ErrSystem   = NewErrorCoder(http.StatusInternalServerError, http.StatusText(http.StatusInternalServerError))
+	ErrArgument = NewErrorCoder(http.StatusBadRequest, http.StatusText(http.StatusBadRequest))
+	ErrTimeout  = NewErrorCoder(http.StatusRequestTimeout, http.StatusText(http.StatusRequestTimeout))
 )
 
 type ReturnCoder interface {
