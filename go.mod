@@ -1,4 +1,4 @@
-module returncodes
+module github.com/nocai/returncodes
 
 go 1.12
 
